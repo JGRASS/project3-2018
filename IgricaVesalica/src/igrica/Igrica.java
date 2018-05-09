@@ -1,6 +1,10 @@
 package igrica;
 
 import interfejs.IgricaInterfejs;
+import sistemskeOperacije.SODaLiJePogodjenaRec;
+import sistemskeOperacije.SODaLiSuPotroseniSviPokusaji;
+import sistemskeOperacije.SODodajSlovo;
+import sistemskeOperacije.SOSakrivenaRecNaPocetkuIgre;
 
 /**
  * Klasa o igrici.
@@ -16,12 +20,12 @@ public class Igrica implements IgricaInterfejs {
 	/**
 	 * Atribut pokazuje koliko puta je igrac promasio u odabiru slova.
 	 */
-	private int brojPromasaja;
+	private static int brojPromasaja;
 
 	/**
 	 * Atribut predstavlja rec koja je delimicno pogodjena.
 	 */
-	private char[] recSaOtkrivenimSlovima;
+	public static char[] recSaOtkrivenimSlovima;
 
 	/**
 	 * @param zadataRec
@@ -45,10 +49,20 @@ public class Igrica implements IgricaInterfejs {
 	/**
 	 * @return brojPromasaja Metoda vraca broj promasaja pri pogadjanju igraca.
 	 */
-	public int getBrojPromasaja() {
+	public static int getBrojPromasaja() {
 		return brojPromasaja;
 	}
 
+	/**
+	 * 
+	 * @param broj
+	 * Metoda koja postavlja brojPromasaja na zadatu vrednost
+	 */
+	public static void setBrojPromasaja(int broj) {
+		brojPromasaja = broj;
+	}
+	
+	
 	/**
 	 * @param slovo
 	 * @return recSaOtkrivenimSlovima.
@@ -61,17 +75,7 @@ public class Igrica implements IgricaInterfejs {
 	 */
 	@Override
 	public char[] dodajSlovo(char slovo) {
-		if (recKojaSeTrazi.toUpperCase().indexOf(slovo) != -1) {
-			for (int i = 0; i < recKojaSeTrazi.toUpperCase().length(); i++) {
-				if (recKojaSeTrazi.toUpperCase().charAt(i) == slovo) {
-					recSaOtkrivenimSlovima[i] = slovo;
-				}
-			}
-			return recSaOtkrivenimSlovima;
-		} else {
-			brojPromasaja++;
-			return new char[0];
-		}
+		return SODodajSlovo.izvrsi(recKojaSeTrazi, slovo);
 	}
 
 	/**
@@ -82,14 +86,7 @@ public class Igrica implements IgricaInterfejs {
 	 */
 	@Override
 	public char[] sakrivenaRecNaPocetkuIgre() {
-		String recZaPrikaz = "";
-		for (int i = 0; i < recKojaSeTrazi.length(); i++) {
-			if (recKojaSeTrazi.charAt(i) != ' ')
-				recZaPrikaz += 'X';
-			else
-				recZaPrikaz += ' ';
-		}
-		return recZaPrikaz.toCharArray();
+		return SOSakrivenaRecNaPocetkuIgre.izvrsi(recKojaSeTrazi);
 	}
 
 	/**
@@ -100,11 +97,7 @@ public class Igrica implements IgricaInterfejs {
 	 */
 	@Override
 	public boolean daLiJePogodjenaRec() {
-		for (int i = 0; i < recSaOtkrivenimSlovima.length; i++) {
-			if (recSaOtkrivenimSlovima[i] == '*')
-				return false;
-		}
-		return true;
+		return SODaLiJePogodjenaRec.izvrsi(recSaOtkrivenimSlovima);
 	}
 
 	/**
@@ -115,10 +108,7 @@ public class Igrica implements IgricaInterfejs {
 	 */
 	@Override
 	public boolean daLiSuPotroseniSviPokusaji() {
-		if (getBrojPromasaja() >= 6) {
-			return true;
-		}
-		return false;
+		return SODaLiSuPotroseniSviPokusaji.izvrsi();
 	}
 
 }
