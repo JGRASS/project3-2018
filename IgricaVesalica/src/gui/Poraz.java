@@ -49,7 +49,7 @@ public class Poraz extends JFrame {
 				}
 			});
 			contentPane.setLayout(null);
-			btnPovratak.setBackground(SystemColor.desktop);
+			btnPovratak.setBackground(SystemColor.inactiveCaptionBorder);
 			btnPovratak.setFont(new Font("Arial Black", Font.BOLD, 12));
 			btnPovratak.setBounds(90, 197, 143, 27);
 			contentPane.add(btnPovratak);

@@ -51,7 +51,7 @@ public class Pobeda extends JFrame {
 					dispose();
 				}
 			});
-			btnPovratak.setBackground(SystemColor.desktop);
+			btnPovratak.setBackground(SystemColor.inactiveCaptionBorder);
 			btnPovratak.setFont(new Font("Arial Black", Font.BOLD, 12));
 			btnPovratak.setBounds(562, 5, 143, 36);
 			contentPane.add(btnPovratak);
