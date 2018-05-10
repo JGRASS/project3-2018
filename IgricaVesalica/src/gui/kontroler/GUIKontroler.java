@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import gui.IgraProzor;
+import gui.Instrukcije;
 import gui.PocetniProzor;
 
 public class GUIKontroler extends JFrame {
@@ -56,5 +57,12 @@ public class GUIKontroler extends JFrame {
 		prozor.setLocationRelativeTo(pp);
 		prozor.setVisible(true);
 	}
+	
+	public static void prikaziInstrukcije() {
+		Instrukcije prozor = new Instrukcije();
+		prozor.setLocationRelativeTo(pp);
+		prozor.setVisible(true);
+	}
+
 
 }

@@ -33,6 +33,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.Color;
 
 public class PocetniProzor extends JFrame {
 
@@ -89,6 +90,11 @@ public class PocetniProzor extends JFrame {
 		menuBar.add(mnHelp);
 
 		JMenuItem mntmInstrukcije = new JMenuItem("Instrukcije");
+		mntmInstrukcije.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GUIKontroler.prikaziInstrukcije();
+			}
+		});
 		mnHelp.add(mntmInstrukcije);
 
 		JMenuItem mntmOIgrici = new JMenuItem("O igrici");
@@ -138,20 +144,20 @@ public class PocetniProzor extends JFrame {
 
 		JButton btnNastaviIgru = new JButton("Nastavi igru");
 		btnNastaviIgru.setFont(new Font("Arial Black", Font.BOLD, 12));
-		btnNastaviIgru.setBackground(SystemColor.desktop);
+		btnNastaviIgru.setBackground(new Color(255, 255, 255));
 		btnNastaviIgru.setBounds(47, 109, 132, 32);
 		contentPane.add(btnNastaviIgru);
 
 		 
 		JButton btnIzadji = new JButton("Izadji");
 		btnIzadji.setFont(new Font("Arial Black", Font.BOLD, 12));
-		btnIzadji.setBackground(SystemColor.desktop);
+		btnIzadji.setBackground(new Color(255, 255, 255));
 		btnIzadji.setBounds(47, 166, 132, 32);
 		contentPane.add(btnIzadji);
 
 		JButton btnZapocniIgru = new JButton("Zapocni igru");
 		btnZapocniIgru.setFont(new Font("Arial Black", Font.BOLD, 12));
-		btnZapocniIgru.setBackground(SystemColor.desktop);
+		btnZapocniIgru.setBackground(new Color(255, 255, 255));
 		btnZapocniIgru.setBounds(47, 48, 132, 32);
 		contentPane.add(btnZapocniIgru);
 		
@@ -200,7 +206,6 @@ public class PocetniProzor extends JFrame {
 				JOptionPane.INFORMATION_MESSAGE);
 
 	}
-	
 
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
@@ -222,3 +227,4 @@ public class PocetniProzor extends JFrame {
 		});
 	}
 }
+
