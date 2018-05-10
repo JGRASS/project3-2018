@@ -1,5 +1,7 @@
 package igrica;
 
+import java.io.Serializable;
+
 import interfejs.IgricaInterfejs;
 import sistemskeOperacije.SODaLiJePogodjenaRec;
 import sistemskeOperacije.SODaLiSuPotroseniSviPokusaji;
@@ -12,7 +14,7 @@ import sistemskeOperacije.SOSakrivenaRecNaPocetkuIgre;
  * @author Nemanja Rasic
  * 
  */
-public class Igrica implements IgricaInterfejs {
+public class Igrica implements IgricaInterfejs, Serializable {
 
 	/**
 	 * Atribut predstavlja rec koju igrac treba da pogodi.
@@ -28,6 +30,18 @@ public class Igrica implements IgricaInterfejs {
 	 * Atribut predstavlja rec koja je delimicno pogodjena.
 	 */
 	public static char[] recSaOtkrivenimSlovima;
+
+	public static char[] getRecSaOtkrivenimSlovima() {
+		return recSaOtkrivenimSlovima;
+	}
+
+	public static void setRecSaOtkrivenimSlovima(char[] recSaOtkrivenimSlovima) {
+		Igrica.recSaOtkrivenimSlovima = recSaOtkrivenimSlovima;
+	}
+
+	public static void setRecKojaSeTrazi(String recKojaSeTrazi) {
+		Igrica.recKojaSeTrazi = recKojaSeTrazi;
+	}
 
 	/**
 	 * Kontstruktor inicijalizuje klasu i uvodi novu zadatu rec, pocinje da broji

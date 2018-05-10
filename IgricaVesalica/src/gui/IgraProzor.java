@@ -48,6 +48,22 @@ public class IgraProzor extends JFrame {
 	private int brojPromasaja = 0;
 	private JLabel lblSlika_1;
 
+	public void setLblSlika(JLabel lblSlika) {
+		this.lblSlika = lblSlika;
+	}
+
+	public void setZadataRec(String zadataRec) {
+		this.zadataRec = zadataRec;
+	}
+
+	public void setRecSkrivena(char[] recSkrivena) {
+		this.recSkrivena = recSkrivena;
+	}
+
+	public void setLblSlika_1(JLabel lblSlika_1) {
+		this.lblSlika_1 = lblSlika_1;
+	}
+
 	/**
 	 * Create the frame.
 	 */
@@ -795,6 +811,13 @@ public class IgraProzor extends JFrame {
 		contentPane.add(btnIzadji);
 
 		JButton btnSacuvajIgru = new JButton("Sacuvaj igru");
+		btnSacuvajIgru.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				GUIKontroler.sacuvajIgru(zadataRec, brojPromasaja, recSkrivena);
+				dispose();
+				GUIKontroler.prikaziPocetniProzor();
+			}
+		});
 		btnSacuvajIgru.setBackground(new Color(255, 255, 255));
 		btnSacuvajIgru.setFont(new Font("Arial Black", Font.BOLD, 12));
 		btnSacuvajIgru.setBounds(174, 386, 132, 23);

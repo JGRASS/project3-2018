@@ -24,7 +24,9 @@ import igrica.Igrica;
 import sistemskeOperacije.SODaLiJePogodjenaRec;
 import sistemskeOperacije.SODaLiSuPotroseniSviPokusaji;
 import sistemskeOperacije.SODodajSlovo;
+import sistemskeOperacije.SOSacuvajIgru;
 import sistemskeOperacije.SOSakrivenaRecNaPocetkuIgre;
+import sistemskeOperacije.SOUcitajIgru;
 
 public class GUIKontroler extends JFrame {
 	
@@ -153,9 +155,19 @@ public class GUIKontroler extends JFrame {
 		
 	}
 	
+	public static void sacuvajIgru(String rec, int brojPromasaja, char[] recSaOtkrivenimSlovima) {
+		SOSacuvajIgru.izvrsi(brojPromasaja, recSaOtkrivenimSlovima, rec);
+	}
 	
+	public static Igrica ucitajIgru() {
+		return SOUcitajIgru.izvrsi();
+	}
 	
-	
-	
+	public static void nastaviIgru() {
+		Igrica igra= new Igrica(null);
+		igra= SOUcitajIgru.izvrsi();
+		prikaziIgraProzor();
+		IgraProzor novi= new IgraProzor();
+	}
 	
 }

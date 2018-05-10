@@ -185,7 +185,8 @@ public class PocetniProzor extends JFrame {
 		});
 		btnNastaviIgru.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GUIKontroler.prikaziIgraProzor();
+				GUIKontroler.ucitajIgru();
+				
 				dispose();
 			}
 		});
