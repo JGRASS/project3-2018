@@ -2,8 +2,21 @@ package sistemskeOperacije;
 
 import bazaPodataka.BazaReci;
 
+/**
+ * 
+ * Klasa koja predstavlja sistemsku operaciju koja zadaje rec korisniku
+ *
+ */
 public class SOZadajRecIgracu {
-	
+
+	/**
+	 * Metoda prepoznaje koju je kategoriju korisnik izabrao i vraca rec iz te
+	 * kategorije koju korisnik treba da pogodi
+	 * 
+	 * @param kategorija
+	 *            koju je korisnik izabrao
+	 * @return izabrana rec iz kategorije
+	 */
 	public static String izvrsi(String kategorija) {
 
 		String[] reciIzKategorije = null;
@@ -35,8 +48,7 @@ public class SOZadajRecIgracu {
 		}
 		int indeksReci = SOOdaberiRandomBroj.izvrsi();
 		return reciIzKategorije[indeksReci];
-	
+
 	}
-	
 
 }
