@@ -7,7 +7,9 @@ import interfejs.IgracInterfejs;
 import sistemskeOperacije.SOZadajRecIgracu;
 
 /**
- * Klasa o igracu.
+ * Klasa o igracu koja implementira interfejs IgracInterfejs
+ * 
+ * @author Nemanja Rasic
  * 
  */
 
@@ -19,13 +21,16 @@ public class Igrac implements IgracInterfejs {
 	private Igrica igrica;
 
 	/**
+	 * 
+	 * Metoda vraca niz karaktera koji se sastoji od _ na mestima na koja se nalaze
+	 * slova i praznim mestima ako ima vise od jedne reci.
+	 * 
 	 * @param kategorija
 	 *            Kategorija reci koju je igrac odabrao.
 	 * 
 	 * @return igrica.vratiRecZaPrikaz().
 	 * 
-	 *         Metoda vraca niz karaktera koji se sastoji od X na mestima na koja se
-	 *         nalaze slova i praznim mestima ako ima vise od jedne reci.
+	 * 
 	 */
 	@Override
 	public char[] pokreniIgricu(String kategorija) {
@@ -34,6 +39,8 @@ public class Igrac implements IgracInterfejs {
 	}
 
 	/**
+	 * Metoda bira jednu od reci baze za izabranu kategoriju
+	 * 
 	 * @param kategorija
 	 *            Kategorija reci koju je igrac odabrao.
 	 * @return reciIzKategorije[indeksReci] U zavisnosti od izabrane kategorije bira
@@ -43,7 +50,5 @@ public class Igrac implements IgracInterfejs {
 	public static String zadajRecIgracu(String kategorija) {
 		return SOZadajRecIgracu.izvrsi(kategorija);
 	}
-
-	
 
 }
