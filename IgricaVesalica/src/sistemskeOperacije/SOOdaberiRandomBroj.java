@@ -2,12 +2,17 @@ package sistemskeOperacije;
 
 import java.util.Random;
 
+/**
+ * Klasa koja predstavlja sistemsku operaciju nasumicnog biranja broja
+ *
+ */
 public class SOOdaberiRandomBroj {
-	
+
 	/**
-	 * @return randomBroj
-	 *  Metoda generise random broj koji oznacava indeks reci koju
-	 *         ce igrac pokagadjati.
+	 * Metoda generise random broj koji oznacava indeks reci koju ce igrac
+	 * pogadjati.
+	 * 
+	 * @return indeks reci
 	 */
 	public static int izvrsi() {
 		Random rand = new Random();
