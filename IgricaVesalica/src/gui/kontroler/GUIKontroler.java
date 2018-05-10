@@ -15,6 +15,7 @@ import javax.swing.border.EmptyBorder;
 
 import gui.IgraProzor;
 import gui.Instrukcije;
+
 import gui.Pobeda;
 import gui.PocetniProzor;
 import gui.Poraz;
@@ -80,6 +81,7 @@ public class GUIKontroler extends JFrame {
 		prozor.setLocationRelativeTo(pp);
 		prozor.setVisible(true);
 	}
+
 	
 	public static void prikaziPorazProzor() {
 		Poraz poraz = new Poraz();
@@ -92,6 +94,7 @@ public class GUIKontroler extends JFrame {
 		pobeda.setLocationRelativeTo(pp);
 		pobeda.setVisible(true);
 	}
+
 
 	public static String zapocniIgru(String kategorija) {
 		igrac1= new Igrac();

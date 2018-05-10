@@ -40,11 +40,15 @@ public class IgraProzor extends JFrame {
 	private JPanel contentPane;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JLabel lblSlika;
+
 	private String zadataRec;
 	private char[] recSkrivena;
 	private int brojPromasaja = 0;
 	private JLabel lblSlika_1;
 	
+
+	
+
 	/**
 	 * Create the frame.
 	 */
@@ -835,8 +839,6 @@ public class IgraProzor extends JFrame {
 		contentPane.add(btnSacuvajIgru);
 		
 		
-		
-		
 	}
 
 	public void izadji() {
@@ -867,3 +869,4 @@ public class IgraProzor extends JFrame {
 		});
 	}
 }
+

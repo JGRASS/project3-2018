@@ -36,7 +36,7 @@ public class Instrukcije extends JFrame {
 		JTextArea txtrO = new JTextArea();
 		txtrO.setBounds(5, 5, 356, 236);
 		txtrO.setFont(new Font("Arial Black", Font.PLAIN, 12));
-		txtrO.setText("Pravila\r\n\r\nOvo je jednostavna igrica u kojoj je cilj pogoditi\r\nzadatu rec. Rec mozete da izaberete iz 8 kategorija:\r\ndrzave, muzicki instrumenti, voce, povrce, sportovi, \r\nevropski gradovi, zivotinje i zanimanja. \r\nPogadjate slovo po slovo, birajuci slovo, za koje \r\npretpostavljate da rec sadrzi, desnim klikom na slovo \r\nna ekranu ili na tasturi. Imate pravo da sest puta \r\nizaberete pogresno slovo, ali opet da pogodite rec \r\ni pobedite!");
+		txtrO.setText("Pravila\r\n\r\nOvo je jednostavna igrica u kojoj je cilj pogoditi\r\nzadatu rec. Rec mozete da izaberete iz 8 kategorija:\r\ndrzave, muzicki instrumenti, voce, povrce, sportovi, \r\nevropski gradovi, zivotinje i zanimanja. \r\nPogadjate slovo po slovo, birajuci slovo, za koje \r\npretpostavljate da rec sadrzi, desnim klikom na slovo \r\nna ekranu ili na tasturi. Imate pravo da pet puta \r\nizaberete pogresno slovo, ali opet da pogodite rec \r\ni pobedite!");
 		contentPane.add(txtrO);
 	}
 }
