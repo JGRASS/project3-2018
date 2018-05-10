@@ -102,14 +102,13 @@ public class Igrica implements IgricaInterfejs {
 
 	@Override
 	public boolean daLiSuPotroseniSviPokusaji() {
-		if(brojPromasaja == 6) return true;
+		if(brojPromasaja >= 6) return true;
 		return false;
 	}
 
 	@Override
 	public char[] dodajSlovo(char slovo) {
-		// TODO Auto-generated method stub
-		return null;
+		return SODodajSlovo.izvrsi(recKojaSeTrazi, slovo);
 	}
 
 	/**
