@@ -15,7 +15,7 @@ public class Igrica implements IgricaInterfejs {
 	/**
 	 * Atribut predstavlja rec koju igrac treba da pogodi.
 	 */
-	private String recKojaSeTrazi;
+	public static String recKojaSeTrazi;
 
 	/**
 	 * Atribut pokazuje koliko puta je igrac promasio u odabiru slova.
@@ -73,10 +73,10 @@ public class Igrica implements IgricaInterfejs {
 	 *         metoda vraca izmenjenu rec za prikaz u obliku niza u protivnom se
 	 *         povecava broj promasaja.
 	 */
-	@Override
-	public char[] dodajSlovo(char slovo) {
-		return SODodajSlovo.izvrsi(recKojaSeTrazi, slovo);
-	}
+	//@Override
+	//public char[] dodajSlovo(char slovo) {
+		//return SODodajSlovo.izvrsi(recKojaSeTrazi, slovo, );
+	//}
 
 	/**
 	 * @return recZaPrikaz.toCharArray() Metoda vraca rec za prikaz nakon
@@ -100,15 +100,23 @@ public class Igrica implements IgricaInterfejs {
 		return SODaLiJePogodjenaRec.izvrsi(recSaOtkrivenimSlovima);
 	}
 
+	@Override
+	public boolean daLiSuPotroseniSviPokusaji() {
+		if(brojPromasaja == 6) return true;
+		return false;
+	}
+
+	@Override
+	public char[] dodajSlovo(char slovo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	/**
 	 * U slucaju da je broj promasaja jednak 6 onda metoda vraca true i igrac je
 	 * izgubio, u protivnom vraca false jer igrac ima pravo da jos traga za pojmom.
 	 * 
 	 * @return boolean
 	 */
-	@Override
-	public boolean daLiSuPotroseniSviPokusaji() {
-		return SODaLiSuPotroseniSviPokusaji.izvrsi();
-	}
-
+	
 }
