@@ -6,7 +6,7 @@ public class SOSakrivenaRecNaPocetkuIgre {
 		String recZaPrikaz = "";
 		for (int i = 0; i < recKojaSeTrazi.length(); i++) {
 			if (recKojaSeTrazi.charAt(i) != ' ')
-				recZaPrikaz += 'X';
+				recZaPrikaz += '_';
 			else
 				recZaPrikaz += ' ';
 		}
