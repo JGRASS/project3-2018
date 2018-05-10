@@ -17,11 +17,11 @@ public class SOSacuvajIgru {
 	/**
 	 * Metoda cuva trenutne podatke u trenutku kada korisnik zeli da sacuva igricu
 	 */
-	public static void izvrsi(int brojPromasaja, char[] recSaOtkrivenimSlovima, String zadataRec) {
-		Igrica igra= new Igrica(null);
+	public static void izvrsi(int brojPromasaja, char[] recSaOtkrivenimSlovima, String zadataRec, String kategorija) {
+		Igrica igra= new Igrica(zadataRec);
 		igra.setBrojPromasaja(brojPromasaja);
-		igra.setRecKojaSeTrazi(zadataRec);
 		igra.setRecSaOtkrivenimSlovima(recSaOtkrivenimSlovima);
+		igra.setKategorija(kategorija);
 		
 		try {
 			ObjectOutputStream out=new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("sacuvanaIgra.out")));

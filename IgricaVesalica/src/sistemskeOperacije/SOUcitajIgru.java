@@ -28,7 +28,7 @@ public class SOUcitajIgru {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return new Igrica("Pas");
 	}
 
 }

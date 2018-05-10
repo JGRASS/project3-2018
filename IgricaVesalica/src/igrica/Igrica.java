@@ -26,6 +26,16 @@ public class Igrica implements IgricaInterfejs, Serializable {
 	 */
 	private static int brojPromasaja;
 
+	private static String kategorija;
+	
+	public static String getKategorija() {
+		return kategorija;
+	}
+	
+	public void setKategorija(String kategorija) {
+		this.kategorija = kategorija;
+	}
+	
 	/**
 	 * Atribut predstavlja rec koja je delimicno pogodjena.
 	 */
@@ -39,6 +49,8 @@ public class Igrica implements IgricaInterfejs, Serializable {
 		Igrica.recSaOtkrivenimSlovima = recSaOtkrivenimSlovima;
 	}
 
+	
+	
 	public static void setRecKojaSeTrazi(String recKojaSeTrazi) {
 		Igrica.recKojaSeTrazi = recKojaSeTrazi;
 	}

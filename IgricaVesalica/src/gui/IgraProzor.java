@@ -21,6 +21,7 @@ import javax.swing.JRadioButton;
 import javax.swing.KeyStroke;
 import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.ImageIcon;
 
 import java.awt.Toolkit;
@@ -43,10 +44,23 @@ public class IgraProzor extends JFrame {
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JLabel lblSlika;
 
+	private JRadioButton rdbtnEvropskiGradovi;
+	private JRadioButton rdbtnZivotinje;
+	private JRadioButton rdbtnDrzave;
+	private JRadioButton rdbtnPovrce;
+	private JRadioButton rdbtnVoce;
+	private JRadioButton rdbtnZanimanja;
+	private JRadioButton rdbtnSportovi;
+	private JRadioButton rdbtnMuzickiInstrumenti;
 	private String zadataRec;
 	private char[] recSkrivena;
 	private int brojPromasaja = 0;
 	private JLabel lblSlika_1;
+	private JLabel lblRec;
+
+	public void setLblRec(String rec) {
+		lblRec.setText(rec);
+	}
 
 	public void setLblSlika(JLabel lblSlika) {
 		this.lblSlika = lblSlika;
@@ -60,8 +74,12 @@ public class IgraProzor extends JFrame {
 		this.recSkrivena = recSkrivena;
 	}
 
-	public void setLblSlika_1(JLabel lblSlika_1) {
-		this.lblSlika_1 = lblSlika_1;
+	public void setBrojPromasaja(int broj) {
+		this.brojPromasaja = broj;
+	}
+
+	public void setLblSlika_1(ImageIcon slika) {
+		lblSlika_1.setIcon(slika);
 	}
 
 	/**
@@ -101,7 +119,7 @@ public class IgraProzor extends JFrame {
 		});
 		popupMenu.add(mntmIzadji_1);
 
-		JLabel lblRec = new JLabel("");
+		lblRec = new JLabel("");
 		lblRec.setForeground(Color.BLACK);
 		lblRec.setFont(new Font("Arial Black", Font.BOLD, 30));
 		lblRec.setBounds(301, 214, 205, 44);
@@ -742,7 +760,7 @@ public class IgraProzor extends JFrame {
 		lblKategorija.setBounds(369, 0, 76, 28);
 		contentPane.add(lblKategorija);
 
-		JRadioButton rdbtnEvropskiGradovi = new JRadioButton("Evropski gradovi");
+		rdbtnEvropskiGradovi = new JRadioButton("Evropski gradovi");
 		rdbtnEvropskiGradovi.setActionCommand("Evropski gradovi");
 		rdbtnEvropskiGradovi.setFont(new Font("Tahoma", Font.BOLD, 11));
 		rdbtnEvropskiGradovi.setSelected(true);
@@ -750,49 +768,49 @@ public class IgraProzor extends JFrame {
 		rdbtnEvropskiGradovi.setBounds(362, 21, 129, 23);
 		contentPane.add(rdbtnEvropskiGradovi);
 
-		JRadioButton rdbtnZivotinje = new JRadioButton("Zivotinje");
+		rdbtnZivotinje = new JRadioButton("Zivotinje");
 		rdbtnZivotinje.setActionCommand("Zivotinje");
 		rdbtnZivotinje.setFont(new Font("Tahoma", Font.BOLD, 11));
 		buttonGroup.add(rdbtnZivotinje);
 		rdbtnZivotinje.setBounds(362, 42, 109, 23);
 		contentPane.add(rdbtnZivotinje);
 
-		JRadioButton rdbtnDrzave = new JRadioButton("Drzave");
+		rdbtnDrzave = new JRadioButton("Drzave");
 		rdbtnDrzave.setActionCommand("Drzave");
 		rdbtnDrzave.setFont(new Font("Tahoma", Font.BOLD, 11));
 		buttonGroup.add(rdbtnDrzave);
 		rdbtnDrzave.setBounds(362, 68, 109, 14);
 		contentPane.add(rdbtnDrzave);
 
-		JRadioButton rdbtnPovrce = new JRadioButton("Povrce");
+		rdbtnPovrce = new JRadioButton("Povrce");
 		rdbtnPovrce.setActionCommand("Povrce");
 		rdbtnPovrce.setFont(new Font("Tahoma", Font.BOLD, 11));
 		buttonGroup.add(rdbtnPovrce);
 		rdbtnPovrce.setBounds(362, 85, 109, 23);
 		contentPane.add(rdbtnPovrce);
 
-		JRadioButton rdbtnVoce = new JRadioButton("Voce");
+		rdbtnVoce = new JRadioButton("Voce");
 		rdbtnVoce.setActionCommand("Voce");
 		rdbtnVoce.setFont(new Font("Tahoma", Font.BOLD, 11));
 		buttonGroup.add(rdbtnVoce);
 		rdbtnVoce.setBounds(362, 111, 109, 14);
 		contentPane.add(rdbtnVoce);
 
-		JRadioButton rdbtnSportovi = new JRadioButton("Sportovi");
+		rdbtnSportovi = new JRadioButton("Sportovi");
 		rdbtnSportovi.setActionCommand("Sportovi");
 		rdbtnSportovi.setFont(new Font("Tahoma", Font.BOLD, 11));
 		buttonGroup.add(rdbtnSportovi);
 		rdbtnSportovi.setBounds(362, 128, 109, 23);
 		contentPane.add(rdbtnSportovi);
 
-		JRadioButton rdbtnZanimanja = new JRadioButton("Zanimanja");
+		rdbtnZanimanja = new JRadioButton("Zanimanja");
 		rdbtnZanimanja.setActionCommand("Zanimanja");
 		rdbtnZanimanja.setFont(new Font("Tahoma", Font.BOLD, 11));
 		buttonGroup.add(rdbtnZanimanja);
 		rdbtnZanimanja.setBounds(362, 154, 109, 14);
 		contentPane.add(rdbtnZanimanja);
 
-		JRadioButton rdbtnMuzickiInstrumenti = new JRadioButton("Muzicki instrumenti");
+		rdbtnMuzickiInstrumenti = new JRadioButton("Muzicki instrumenti");
 		rdbtnMuzickiInstrumenti.setActionCommand("Muzicki instrumenti");
 		rdbtnMuzickiInstrumenti.setFont(new Font("Tahoma", Font.BOLD, 11));
 		buttonGroup.add(rdbtnMuzickiInstrumenti);
@@ -813,7 +831,8 @@ public class IgraProzor extends JFrame {
 		JButton btnSacuvajIgru = new JButton("Sacuvaj igru");
 		btnSacuvajIgru.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				GUIKontroler.sacuvajIgru(zadataRec, brojPromasaja, recSkrivena);
+				GUIKontroler.sacuvajIgru(zadataRec, GUIKontroler.brojGresaka(),
+						GUIKontroler.getRecSaOtkrivenimSlovima(), buttonGroup.getSelection().getActionCommand());
 				dispose();
 				GUIKontroler.prikaziPocetniProzor();
 			}
@@ -822,6 +841,37 @@ public class IgraProzor extends JFrame {
 		btnSacuvajIgru.setFont(new Font("Arial Black", Font.BOLD, 12));
 		btnSacuvajIgru.setBounds(174, 386, 132, 23);
 		contentPane.add(btnSacuvajIgru);
+
+	}
+
+	public void setButtonGroupSelection(String s) {
+
+		switch (s) {
+		case "Zanimanja":
+			rdbtnZanimanja.setSelected(true);
+			break;
+		case "Drzave":
+			rdbtnDrzave.setSelected(true);
+			break;
+		case "Voce":
+			rdbtnVoce.setSelected(true);
+			break;
+		case "Povrce":
+			rdbtnPovrce.setSelected(true);
+			break;
+		case "Sportovi":
+			rdbtnSportovi.setSelected(true);
+			break;
+		case "Evropski gradovi":
+			rdbtnEvropskiGradovi.setSelected(true);
+			break;
+		case "Muzicki instrumenti":
+			rdbtnMuzickiInstrumenti.setSelected(true);
+			break;
+		case "Zivotinje":
+			rdbtnZivotinje.setSelected(true);
+			break;
+		}
 
 	}
 

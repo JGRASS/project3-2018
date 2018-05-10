@@ -103,6 +103,7 @@ public class GUIKontroler extends JFrame {
 		String rec= igrac1.zadajRecIgracu(kategorija);
 		
 		igrica1 = new Igrica(rec);
+		igrica1.setKategorija(kategorija);
 		
 		return rec;
 	}
@@ -155,12 +156,29 @@ public class GUIKontroler extends JFrame {
 		
 	}
 	
-	public static void sacuvajIgru(String rec, int brojPromasaja, char[] recSaOtkrivenimSlovima) {
-		SOSacuvajIgru.izvrsi(brojPromasaja, recSaOtkrivenimSlovima, rec);
+	public static char[] getRecSaOtkrivenimSlovima() {
+		return igrica1.getRecSaOtkrivenimSlovima();
 	}
 	
-	public static Igrica ucitajIgru() {
-		return SOUcitajIgru.izvrsi();
+	public static void sacuvajIgru(String rec, int brojPromasaja, char[] recSaOtkrivenimSlovima,String kategorija) {
+		SOSacuvajIgru.izvrsi(brojPromasaja, recSaOtkrivenimSlovima, rec, kategorija);
+	}
+	
+	public static void ucitajIgru() {
+		igrica1 = SOUcitajIgru.izvrsi();
+		
+		IgraProzor prozor = new IgraProzor();
+		prozor.setLocationRelativeTo(pp);
+		prozor.setVisible(true);
+		
+		String recZaPrikaz = String.valueOf(igrica1.getRecSaOtkrivenimSlovima());
+		
+		prozor.setZadataRec(igrica1.getRecKojaSeTrazi());
+		prozor.setRecSkrivena(igrica1.getRecSaOtkrivenimSlovima());
+		prozor.setBrojPromasaja(igrica1.getBrojPromasaja());
+		prozor.setLblRec(recZaPrikaz);
+		prozor.setLblSlika_1(prikaziSlikuVesanja());
+		prozor.setButtonGroupSelection(igrica1.getKategorija());
 	}
 	
 	public static void nastaviIgru() {
