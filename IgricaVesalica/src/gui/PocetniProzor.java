@@ -109,39 +109,6 @@ public class PocetniProzor extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JPopupMenu popupMenu = new JPopupMenu();
-		contentPane.add(popupMenu);
-		popupMenu.setBounds(0, 0, 113, 94);
-		
-		JMenuItem mntmNovaIgra_1 = new JMenuItem("Nova igra");
-		mntmNovaIgra_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				GUIKontroler.prikaziIgraProzor();
-				dispose();
-			}
-		});
-		popupMenu.add(mntmNovaIgra_1);
-
-		JMenuItem mntmNastaviIgru_1 = new JMenuItem("Nastavi igru");
-		mntmNastaviIgru_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				GUIKontroler.prikaziIgraProzor();
-				dispose();
-			}
-		});
-		popupMenu.add(mntmNastaviIgru_1);
-
-		JMenuItem mntmInstrukcije_1 = new JMenuItem("Instrukcije");
-		popupMenu.add(mntmInstrukcije_1);
-
-		JMenuItem mntmIzlazak = new JMenuItem("Izlazak");
-		mntmIzlazak.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				izadji();
-			}
-		});
-		popupMenu.add(mntmIzlazak);
-
 		JButton btnNastaviIgru = new JButton("Nastavi igru");
 		btnNastaviIgru.setFont(new Font("Arial Black", Font.BOLD, 12));
 		btnNastaviIgru.setBackground(new Color(255, 255, 255));
@@ -167,6 +134,39 @@ public class PocetniProzor extends JFrame {
 			JLabel lblSlika = new JLabel(new ImageIcon(image));
 			lblSlika.setBounds(0, 0, 569, 324);
 			contentPane.add(lblSlika);
+			
+					JPopupMenu popupMenu = new JPopupMenu();
+					addPopup(lblSlika, popupMenu);
+					popupMenu.setBounds(0, 0, 113, 94);
+					
+					JMenuItem mntmNovaIgra_1 = new JMenuItem("Nova igra");
+					mntmNovaIgra_1.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							GUIKontroler.prikaziIgraProzor();
+							dispose();
+						}
+					});
+					popupMenu.add(mntmNovaIgra_1);
+					
+							JMenuItem mntmNastaviIgru_1 = new JMenuItem("Nastavi igru");
+							mntmNastaviIgru_1.addActionListener(new ActionListener() {
+								public void actionPerformed(ActionEvent e) {
+									GUIKontroler.prikaziIgraProzor();
+									dispose();
+								}
+							});
+							popupMenu.add(mntmNastaviIgru_1);
+							
+									JMenuItem mntmInstrukcije_1 = new JMenuItem("Instrukcije");
+									popupMenu.add(mntmInstrukcije_1);
+									
+											JMenuItem mntmIzlazak = new JMenuItem("Izlazak");
+											mntmIzlazak.addActionListener(new ActionListener() {
+												public void actionPerformed(ActionEvent e) {
+													izadji();
+												}
+											});
+											popupMenu.add(mntmIzlazak);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
