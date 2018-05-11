@@ -9,7 +9,7 @@ import sistemskeOperacije.SODodajSlovo;
 import sistemskeOperacije.SOSakrivenaRecNaPocetkuIgre;
 
 /**
- * Klasa o igrici koja implementira interfejs IgricaInterfejs
+ * Klasa o igrici koja implementira interfejse IgricaInterfejs i Serializable
  * 
  * @author Nemanja Rasic
  * 
@@ -26,31 +26,60 @@ public class Igrica implements IgricaInterfejs, Serializable {
 	 */
 	private static int brojPromasaja;
 
+	/**
+	 * Atribut predstavlja kategoriju koju je igrac izabrao
+	 */
 	private static String kategorija;
-	
+
+	/**
+	 * Get metoda za atribut kategorija
+	 * 
+	 * @return kategorija koja je izabrana
+	 */
 	public static String getKategorija() {
 		return kategorija;
 	}
-	
+
+	/**
+	 * Set metoda za atribut kategorija
+	 * 
+	 * @param kategorija
+	 *            koja treba da bude izabrana
+	 */
 	public void setKategorija(String kategorija) {
 		this.kategorija = kategorija;
 	}
-	
+
 	/**
 	 * Atribut predstavlja rec koja je delimicno pogodjena.
 	 */
 	public static char[] recSaOtkrivenimSlovima;
 
+	/**
+	 * Get metoda za atribut recSaOtkrivenimSlovima
+	 * 
+	 * @return niz karaktera koji predstavlja rec koja je delimicno pogodjena
+	 */
 	public static char[] getRecSaOtkrivenimSlovima() {
 		return recSaOtkrivenimSlovima;
 	}
 
+	/**
+	 * Set metoda za atribut recSaOtkrivenimSlovima
+	 * 
+	 * @param recSaOtkrivenimSlovima
+	 *            niz karaktera koji predstavlja rec koja je delimicno pogodjena
+	 */
 	public static void setRecSaOtkrivenimSlovima(char[] recSaOtkrivenimSlovima) {
 		Igrica.recSaOtkrivenimSlovima = recSaOtkrivenimSlovima;
 	}
 
-	
-	
+	/**
+	 * Set metoda za atribut recKojaSeTrazi
+	 * 
+	 * @param recKojaSeTrazi
+	 *            tj. zadata rec koju korisnik treba da pogodi
+	 */
 	public static void setRecKojaSeTrazi(String recKojaSeTrazi) {
 		Igrica.recKojaSeTrazi = recKojaSeTrazi;
 	}
@@ -90,7 +119,8 @@ public class Igrica implements IgricaInterfejs, Serializable {
 	/**
 	 * Metoda koja postavlja brojPromasaja na zadatu vrednost
 	 * 
-	 * @param broj promasaja
+	 * @param broj
+	 *            promasaja
 	 * 
 	 */
 	public static void setBrojPromasaja(int broj) {
@@ -131,7 +161,8 @@ public class Igrica implements IgricaInterfejs, Serializable {
 	@Override
 	public boolean daLiSuPotroseniSviPokusaji() {
 
-		if(brojPromasaja >= 6) return true;
+		if (brojPromasaja >= 6)
+			return true;
 		return false;
 	}
 
@@ -143,7 +174,7 @@ public class Igrica implements IgricaInterfejs, Serializable {
 	 * prikaz u obliku niza u protivnom se povecava broj promasaja.
 	 * 
 	 * @param slovo
-	 * @return recSaOtkrivenimSlovima.
+	 * @return recSaOtkrivenimSlovima
 	 * 
 	 */
 

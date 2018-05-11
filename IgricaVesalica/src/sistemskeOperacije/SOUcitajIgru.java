@@ -11,11 +11,16 @@ import igrica.Igrica;
  * Klasa koja predstavlja sistemsku operaciju ucitavanja sacuvane igre
  */
 public class SOUcitajIgru {
-	
+
+	/**
+	 * Metoda ucitava i omogucava korisniku da nastavi sacuvanu igru
+	 * 
+	 * @return objekat klase Igrica koji sadrzi podatke o sacuvanoj igrici
+	 */
 	public static Igrica izvrsi() {
 		try {
-			ObjectInputStream in= new ObjectInputStream(new FileInputStream("sacuvanaIgra.out"));
-			Igrica igra=(Igrica)( in.readObject());
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream("sacuvanaIgra.out"));
+			Igrica igra = (Igrica) (in.readObject());
 			in.close();
 			return igra;
 		} catch (FileNotFoundException e) {
